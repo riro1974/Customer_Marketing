@@ -1,0 +1,30 @@
+ unique_macro1.pig -- pig macro to deduplicate
+ ftpFiles.scr       -- copy pos and review files (transaction )
+ project_setup.scr  -- project set up script
+ deduplicate.pig    -- deduplicate script
+ load_Staging.scr   -- sqoop import scripts
+ dataIntegrity.pig  -- valiadte data integrity and Not Null etc..
+ productEnrich.pig  -- product enrich -- not complete yet
+ createExtTbl.sql   -- create external tables 
+ buildDatamart.pig  -- build the product dimension and all facts 
+ moveDimTables.scr    -- move the cust/store/sales_rep files to target location
+ CreateTgtTablesExt.sql -- create final target tables (external)
+
+
+
+
+-- once you have all the mysql tables built, start with this sequence 
+
+1. load_Staging.scr - imports all mysql tables to hadoop
+
+2. deduplicate.pig - deduplication 
+
+3. dataIntegrity.pig - data integrity validation 
+
+4. createExtTbl.sql - create external tables on cleaned data
+
+5. buildDatamart.pig -- build the product table and fact table
+
+6. moveDimTables.scr -- move these 3 tables needed in target layer
+
+7. CreateTgtTablesExt.sql - create target ext tables

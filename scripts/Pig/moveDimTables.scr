@@ -1,0 +1,5 @@
+
+
+hadoop fs -cp /user/training/CustMkt/ext/cust/part*   /user/training/CustMkt/target/customer
+hadoop fs -cp /user/training/CustMkt/ext/salesrep/part*   /user/training/CustMkt/target/salesrep
+hadoop fs -cp /user/training/CustMkt/ext/store/part*   /user/training/CustMkt/target/store

@@ -1,0 +1,20 @@
+
+DB=mdm_db1
+USER=root
+PWD=cloudera
+TRG=/user/training/CustMkt/staging
+
+
+#sqoop import-all-tables --connect jdbc:mysql://localhost/$DB  --username $USER --password $PWD  --target-dir $TRG --direct --m 1 
+
+sqoop import --connect jdbc:mysql://localhost/$DB  --username $USER --password $PWD --table dept --target-dir $TRG/dept --direct --split-by dept_id  --delete-target-dir
+sqoop import --connect jdbc:mysql://localhost/$DB  --username $USER --password $PWD --table class --target-dir $TRG/class --direct --m 1 --delete-target-dir
+sqoop import --connect jdbc:mysql://localhost/$DB  --username $USER --password $PWD --table vendor --target-dir $TRG/vendor --direct --m 1 --delete-target-dir
+sqoop import --connect jdbc:mysql://localhost/$DB  --username $USER --password $PWD --table style --target-dir $TRG/style --direct --m 1 --delete-target-dir
+sqoop import --connect jdbc:mysql://localhost/$DB  --username $USER --password $PWD --table promotion --target-dir $TRG/promotion --direct --m 1 --delete-target-dir
+sqoop import --connect jdbc:mysql://localhost/$DB  --username $USER --password $PWD --table customer --target-dir $TRG/customer --direct --m 1 --delete-target-dir
+sqoop import --connect jdbc:mysql://localhost/$DB  --username $USER --password $PWD --table sales_rep --target-dir $TRG/sales_rep --direct --m 1 --delete-target-dir
+sqoop import --connect jdbc:mysql://localhost/$DB  --username $USER --password $PWD --table return_reason --target-dir $TRG/return_reason --direct --m 1 --delete-target-dir
+sqoop import --connect jdbc:mysql://localhost/$DB  --username $USER --password $PWD --table store --target-dir $TRG/store --direct --m 1 --delete-target-dir
+sqoop import --connect jdbc:mysql://localhost/$DB  --username $USER --password $PWD --table price_list --target-dir $TRG/pricelist --direct --m 1 --delete-target-dir
+

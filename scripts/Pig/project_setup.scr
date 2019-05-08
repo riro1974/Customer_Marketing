@@ -1,0 +1,19 @@
+# create data folders 
+
+#project folders 
+
+hadoop fs -mkdir -p /user/training/CustMkt/staging  # staging location
+hadoop fs -mkdir -p /user/training/CustMkt/ext      # external hive table location
+hadoop fs -mkdir -p /user/training/CustMkt/cleanse/unique # unique files
+hadoop fs -mkdir -p /user/training/CustMkt/target         # target star scheme
+hadoop fs -mkdir -p /user/training/CustMkt/exception      # exception files
+hadoop fs -mkdir -p /user/training/CustMkt/staging/pos    # 
+hadoop fs -mkdir -p /user/training/CustMkt/staging/reviews
+
+
+#project databases 
+hive -e 'create database custMkt_Ext;'
+hive -e 'create database custMkt_stg;'
+hive -e 'create database custMkt_tgt;'
+hive -e 'create database custMkt_smry;'
+

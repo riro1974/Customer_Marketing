@@ -1,0 +1,2 @@
+hadoop fs -put /home/cloudera/Class/Project/CustMkt/data/pos.dat   /user/training/CustMkt/staging/pos
+hadoop fs -put /home/cloudera/Class/Project/CustMkt/data/product_reviews.dat   /user/training/CustMkt/staging/reviews

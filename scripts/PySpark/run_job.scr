@@ -1,0 +1,6 @@
+# run all incremental jobs
+load_Staging.scr
+spark-submit deduplicate.py
+spark-submit dataCleanse.py
+spark-submit buildIncr.py
+spark-submit buildAgg.py
